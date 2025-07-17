@@ -1,0 +1,23 @@
+@baseUrl = http://localhost:8000
+
+### Listar todas as ordens
+GET {{baseUrl}}/orders
+Content-Type: application/json
+
+###
+
+### Criar uma nova ordem
+POST {{baseUrl}}/order
+Content-Type: application/json
+
+{
+  "id": "order-4",
+  "price": 150.0,
+  "tax": 15.0
+}
+
+###
+
+### Teste de health check
+GET {{baseUrl}}/orders
+Content-Type: application/json
