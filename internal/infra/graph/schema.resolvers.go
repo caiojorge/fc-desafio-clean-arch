@@ -36,7 +36,7 @@ func (r *queryResolver) Orders(ctx context.Context) ([]*model.Order, error) {
 	if err != nil {
 		return nil, err
 	}
-	
+
 	var result []*model.Order
 	for _, order := range orders {
 		result = append(result, &model.Order{
@@ -46,7 +46,7 @@ func (r *queryResolver) Orders(ctx context.Context) ([]*model.Order, error) {
 			FinalPrice: float64(order.FinalPrice),
 		})
 	}
-	
+
 	return result, nil
 }
 
