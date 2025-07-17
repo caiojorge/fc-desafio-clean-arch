@@ -14,9 +14,9 @@ Para a criação do banco de dados, utilize o Docker (Dockerfile / docker-compos
 Inclua um README.md com os passos a serem executados no desafio e a porta em que a aplicação deverá responder em cada serviço.
 ```
 
-# Novo Endpoint para Listagem de Ordens
+# Endpoint para Listagem de Ordens
 
-## 🎯 Endpoint Implementado
+## 🎯 Endpoint 
 
 **GET /orders** - Lista todas as ordens cadastradas
 
@@ -110,6 +110,37 @@ go test ./internal/infra/web/... -v
 
 # Executar apenas testes do use case
 go test ./internal/usecase/... -v
+```
+
+
+# Listagem de Ordens via gRPC
+
+## 🚀 Como Usar
+
+### 1. Iniciar o Servidor
+```bash
+# Compilar o projeto
+go build -o ordersystem ./cmd/ordersystem/
+
+# Iniciar banco de dados
+docker-compose up -d
+
+# Executar servidor
+./ordersystem
+```
+
+### 2. Testar com grpcurl
+```bash
+# Listar ordens
+grpcurl -plaintext -import-path internal/infra/grpc/protofiles -proto order.proto localhost:50051 pb.OrderService/ListOrders
+
+# Criar ordem
+grpcurl -plaintext -import-path internal/infra/grpc/protofiles -proto order.proto -d '{"id": "123", "price": 100.0, "tax": 10.0}' localhost:50051 pb.OrderService/CreateOrder
+```
+
+### 3. Executar Teste Automatizado
+```bash
+./api/test_grpc_list_orders.sh
 ```
 
 

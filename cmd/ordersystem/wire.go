@@ -57,3 +57,11 @@ func NewWebListOrderHandler(db *sql.DB) *web.WebListOrderHandler {
 	)
 	return &web.WebListOrderHandler{}
 }
+
+func NewListOrderUseCase(db *sql.DB) *usecase.ListOrderUseCase {
+	wire.Build(
+		setOrderRepositoryDependency,
+		usecase.NewListOrderUseCase,
+	)
+	return &usecase.ListOrderUseCase{}
+}

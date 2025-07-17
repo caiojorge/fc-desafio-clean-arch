@@ -1,0 +1,31 @@
+### Criar uma ordem via GraphQL
+POST http://localhost:8080/query
+Content-Type: application/json
+
+{
+  "query": "mutation { createOrder(input: { id: \"graphql-order-1\", Price: 100.0, Tax: 10.0 }) { id Price Tax FinalPrice } }"
+}
+
+### Listar todas as ordens via GraphQL
+POST http://localhost:8080/query
+Content-Type: application/json
+
+{
+  "query": "query { orders { id Price Tax FinalPrice } }"
+}
+
+### Criar outra ordem via GraphQL
+POST http://localhost:8080/query
+Content-Type: application/json
+
+{
+  "query": "mutation { createOrder(input: { id: \"graphql-order-2\", Price: 200.0, Tax: 20.0 }) { id Price Tax FinalPrice } }"
+}
+
+### Listar todas as ordens novamente via GraphQL
+POST http://localhost:8080/query
+Content-Type: application/json
+
+{
+  "query": "query { orders { id Price Tax FinalPrice } }"
+}
