@@ -15,6 +15,7 @@ Inclua um README.md com os passos a serem executados no desafio e a porta em que
 ```
 ## Docker
 - A aplicação deve ser executada dentro do docker-compose, inclusive o app.
+- https://github.com/caiojorge/fc-desafio-clean-arch
 
 ## Subir o server
 ```
