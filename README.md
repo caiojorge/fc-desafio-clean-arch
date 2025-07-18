@@ -34,17 +34,25 @@ docker volume prune -f
 ```
 make up
 ```
+
+## Desligar o server
+```
+make down
+```
+
 ## Verificar se o DB foi criado
+- acesso ao adminer
 ```
 http://localhost:8282/?server=mysql&username=root&db=orders
 ```
 ## 1. Teste do endpoint rest
-- no diretorio API, testar usando o arquivo list_orders.http
+- no diretório api: list_orders.http
 
 ## 2. Teste do Graphql
-- grpc_orders.http
+- no diretório api: grafhql_orders.http
 
 ## 3. Teste GRPC
+- o teste deve ser feito na raiz do projeto.
 ```bash
 ./api/test_grpc_list_orders.sh
 ```
