@@ -11,7 +11,7 @@ POST {{baseUrl}}/order
 Content-Type: application/json
 
 {
-  "id": "order-4",
+  "id": "order-99",
   "price": 150.0,
   "tax": 15.0
 }
