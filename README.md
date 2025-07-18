@@ -16,6 +16,19 @@ Inclua um README.md com os passos a serem executados no desafio e a porta em que
 ## Docker
 - A aplicação deve ser executada dentro do docker-compose, inclusive o app.
 - https://github.com/caiojorge/fc-desafio-clean-arch
+- Fiz alguns ajustes e testei novamente em computadores diferentes (mac e no wsl)
+
+- em caso de problemas com o mysql (porque mudei a versão)
+```
+# Parar todos os containers
+docker-compose down
+
+# Remover dados corrompidos do MySQL
+sudo rm -rf .docker/mysql
+
+# Limpar volumes do Docker
+docker volume prune -f
+```
 
 ## Subir o server
 ```
